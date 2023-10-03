@@ -27,12 +27,18 @@ function Form() {
   function handleSubmit(event) {
     event.preventDefault();
 
+    if (!description) return;
+
     const newItem = {
-      id: Math.random(),
+      id: Date.now(),
       description,
       quantity: quantity,
       packed: false,
     };
+    console.log(newItem);
+
+    setDescription("");
+    setQuantity(1);
   }
 
   return (
